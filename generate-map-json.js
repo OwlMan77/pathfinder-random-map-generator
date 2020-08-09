@@ -4,6 +4,8 @@ const args = process.argv.slice(2);
 const rollD20 = () => Math.floor(Math.random() * 21);
 const hexes = {};
 
+const [width, height] = args;
+
 const getTerrianType = () => {
     const number = rollD20();
 
@@ -77,16 +79,18 @@ const getHexType = () => {
     }
 }
 
-const generateHexInfo = (numberOfHexes) => {
-    for (let i = 0; i < numberOfHexes; i++ ) {
-        hexes[i + 1] = {
+const generateHexInfo = (numberOfXHexes, numberOfYHexes) => {
+    for (let i = 0; i < numberOfXHexes; i++) {
+       for (let j = 0; j < numberOfYHexes; j++) {
+        hexes[`X: ${i + 1} Y: ${j + 1}`] = {
             terrainType: getTerrianType(),
             hexType: getHexType()
         };
+       } 
     }
 }
 
-generateHexInfo(args[0]);
+generateHexInfo(width, height);
 
 const json = JSON.stringify(hexes);
 
