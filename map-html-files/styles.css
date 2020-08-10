@@ -1,3 +1,6 @@
+body {
+  background-color: #0077be;
+}
 .map-container {
     position: relative;
     -webkit-transition: all 0.3s ease-out;
@@ -6,7 +9,7 @@
   
 .map-container .honeycomb {
     display: block;
-    position: absolute;
+    padding-top: 100px;
     padding-left: 18px;
     text-align: center;
     -ms-transform: rotateX(45deg) rotateY(0deg);
@@ -43,7 +46,6 @@
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-    opacity: 0.5;
 }
   
 .map-container .honeycomb .hex:hover {
@@ -58,9 +60,9 @@
 .map-container .honeycomb .hex:hover .content {
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
-    -ms-transform: rotateX(-90deg) translateZ(-40px) translateY(-50px);
-    -webkit-transform: rotateX(-90deg) translateZ(-40px) translateY(-50px);
-    transform: rotateX(-90deg) translateZ(-40px) translateY(-50px);
+    -ms-transform: rotateX(-90deg) translateZ(-20px) translateY(-50px);
+    -webkit-transform: rotateX(-90deg) translateZ(-20px) translateY(-50px);
+    transform: rotateX(-90deg) translateZ(-20px) translateY(-50px);
 }
   
 .map-container .honeycomb .hex .wrapper {
@@ -79,7 +81,7 @@
 .map-container .honeycomb .hex .wrapper .color-1:after { border-left-color: #ffbc06; }
 
 .map-container .honeycomb .hex .wrapper .Forest {
-background-color: green !important;
+  background-color: green !important;
 }
 .map-container .honeycomb .hex .wrapper .Forest:before { border-right-color: green; }
 .map-container .honeycomb .hex .wrapper .Forest:after { border-left-color: green; }
@@ -162,8 +164,10 @@ background-color: #bada55 !important;
 }
 
 .map-container .honeycomb .hex .content small {
-display: block;
-font: 15px/1.1 verdana, sans-serif;
+  display: block;
+  font-weight: 600;
+  font: 15px/1.1 verdana, sans-serif;
+  text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.8);
 }
   
   .map-container .honeycomb .shadows {
