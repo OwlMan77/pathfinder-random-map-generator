@@ -143,6 +143,7 @@ background-color: #bada55 !important;
     -webkit-transition: all 0.3s ease-out;
     -webkit-transition-delay: 0.1s;
     -webkit-transition: all 0.3s ease-out 0.1s;
+    transition-delay: 0.1s;
     transition: all 0.3s ease-out 0.1s;
     -ms-transform: rotateX(-90deg) translateZ(-40px) translateY(-40px);
     -webkit-transform: rotateX(-90deg) translateZ(-40px) translateY(-40px);
