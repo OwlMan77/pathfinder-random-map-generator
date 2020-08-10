@@ -81,7 +81,6 @@ body {
   z-index: 1000;
 }
 
-  
 .map-container .honeycomb .hex .wrapper .color-1 { background: #ffbc06; }
 
 .map-container .honeycomb .hex .wrapper .color-1:before { border-right-color: #ffbc06; }
@@ -137,8 +136,7 @@ background-color: #bada55 !important;
 }
 .map-container .honeycomb .hex .wrapper .Marsh:before { border-right-color: #bada55; }
 .map-container .honeycomb .hex .wrapper .Marsh:after { border-left-color: #bada55; }
-
-  
+ 
 .map-container .honeycomb .hex .content {
     display: block;
     position: absolute;
@@ -178,48 +176,48 @@ background-color: #bada55 !important;
   text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.8);
 }
   
-  .map-container .honeycomb .shadows {
-    display: block;
-    position: absolute;
-    top: -15%;
-    left: -15%;
-    height: 130%;
-    width: 130%;
-    background-image: -webkit-radial-gradient(closest-side, rgba(23, 29, 37, 0), #171d25);
-    background-image: radial-gradient(closest-side, rgba(23, 29, 37, 0), #171d25);
-   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
-    opacity: 0.9;
-    -ms-transform: translateZ(10px);
-    -webkit-transform: translateZ(10px);
-    transform: translateZ(10px);
-    pointer-events: none;
-  }
+.map-container .honeycomb .shadows {
+  display: block;
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  height: 130%;
+  width: 130%;
+  background-image: -webkit-radial-gradient(closest-side, rgba(23, 29, 37, 0), #171d25);
+  background-image: radial-gradient(closest-side, rgba(23, 29, 37, 0), #171d25);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  -ms-transform: translateZ(10px);
+  -webkit-transform: translateZ(10px);
+  transform: translateZ(10px);
+  pointer-events: none;
+}
   
-  .hexagon {
-    display: block;
-    position: absolute;
-    width: 36px;
-    height: 62px;
-    background-color: #ffffff;
-  }
-  
-  .hexagon:before,
-  .hexagon:after {
-    content: "";
-    position: relative;
-    float: left;
-    border-top: 31px solid transparent;
-    border-bottom: 31px solid transparent;
-  }
-  
-  .hexagon:before {
-    border-right: 18px solid #ffffff;
-    left: -18px;
-  }
-  
-  .hexagon:after {
-    border-left: 18px solid #ffffff;
-    right: -18px;
-  }
-  
-  .hidden { display: none; }
+.hexagon {
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 62px;
+  background-color: #ffffff;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: relative;
+  float: left;
+  border-top: 31px solid transparent;
+  border-bottom: 31px solid transparent;
+}
+
+.hexagon:before {
+  border-right: 18px solid #ffffff;
+  left: -18px;
+}
+
+.hexagon:after {
+  border-left: 18px solid #ffffff;
+  right: -18px;
+}
+
+.hidden { display: none; }
