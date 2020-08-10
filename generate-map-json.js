@@ -80,11 +80,15 @@ const getHexType = () => {
 }
 
 const generateHexInfo = (numberOfXHexes, numberOfYHexes) => {
+    hexes['maxWidth'] = numberOfXHexes;
+    hexes['maxHeight'] = numberOfYHexes;
+    hexes['hexes'] = {};
     for (let i = 0; i < numberOfXHexes; i++) {
        for (let j = 0; j < numberOfYHexes; j++) {
-        hexes[`X: ${i + 1} Y: ${j + 1}`] = {
+        hexes['hexes'][`X: ${i + 1} Y: ${j + 1}`] = {
             terrainType: getTerrianType(),
-            hexType: getHexType()
+            hexType: getHexType(),
+            optionalInfo: null
         };
        } 
     }
@@ -94,4 +98,4 @@ generateHexInfo(width, height);
 
 const json = JSON.stringify(hexes);
 
-fs.writeFile('first.json', json, 'utf8', () => console.log('Done'));
+fs.writeFile('./map-data/rando.json', json, 'utf8', () => console.log('Done'));
