@@ -73,6 +73,14 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.map-container .honeycomb .hex .wrapper .tile {
+  position: absolute;
+  top: 0px;
+  left: -19px;
+  z-index: 1000;
+}
+
   
 .map-container .honeycomb .hex .wrapper .color-1 { background: #ffbc06; }
 

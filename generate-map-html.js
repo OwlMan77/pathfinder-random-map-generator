@@ -37,7 +37,7 @@ const createHexes = async () => {
             const currentY = j + 1;
             const { terrainType, hexType, optionalInfo} = hexes[`X: ${currentX} Y: ${currentY}`];
             const terrain = checkPreviousTerrain(terrainType, currentX, currentY);
-            htmlMap += `<a class="hex hex-${currentX}-${currentY} "><div class="wrapper"><div class="hexagon ${terrain}"></div></div> <span class="content"> <small>${hideHexData ? '' : hexType}</small> <strong>${optionalInfo ? `${optionalInfo} - ` : ' '}${terrain}</strong> </span> </a>`
+            htmlMap += `<a class="hex hex-${currentX}-${currentY} "><div class="wrapper"><img class="tile" src="./assets/${terrain.toLowerCase()}.png" /> <div class="hexagon ${terrain}"></div></div> <span class="content"><strong>${optionalInfo ? `${optionalInfo} - ` : ' '}${terrain}</strong>  <small>${hideHexData ? '' : hexType}</small> </span> </a>`
         }
         
         htmlMap += '</div>';
