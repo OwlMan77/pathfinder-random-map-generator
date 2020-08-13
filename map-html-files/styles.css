@@ -63,6 +63,9 @@ body {
     -ms-transform: rotateX(-90deg) translateZ(-20px) translateY(-50px);
     -webkit-transform: rotateX(-90deg) translateZ(-20px) translateY(-50px);
     transform: rotateX(-90deg) translateZ(-20px) translateY(-50px);
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+    height: 70px;
 }
   
 .map-container .honeycomb .hex .wrapper {
