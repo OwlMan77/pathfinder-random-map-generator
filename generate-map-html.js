@@ -49,4 +49,4 @@ const createHexes = async () => {
     return fs.writeFile('./map-html-files/map-1.html', htmlMap);
 }
 
-createHexes().then(() => console.log('Done!'));
+createHexes().then(() => console.log('Map Created!'));

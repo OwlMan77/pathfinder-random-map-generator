@@ -1,0 +1,24 @@
+{
+  "name": "map-generation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate-map-html.js",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "generate20GMMap": "node generate-map-json.js 20 20 && node generate-map-html.js false",
+    "generate20PlayerMap": "node generate-map-json.js 20 20 && node generate-map-html.js true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OwlMan77/pathfinder-random-map-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OwlMan77/pathfinder-random-map-generator/issues"
+  },
+  "homepage": "https://github.com/OwlMan77/pathfinder-random-map-generator#readme"
+}

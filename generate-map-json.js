@@ -125,4 +125,4 @@ const generateHexJson = async () => {
     
 }
 
-generateHexJson().then(() => console.log('Done!'));
+generateHexJson();
