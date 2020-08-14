@@ -2,27 +2,29 @@ const fs = require('fs');
 const args = process.argv.slice(2);
 const axios = require('axios');
 
+const hexes = {};
+
 const rollD20 = (qNumber) => {
     const rollResult = Math.floor(qNumber / 12.75);
     return rollResult ? rollResult : 1;
 }
 
 const callQRNG = async (numberOfRolls) => {
-    return await axios.get(`https://qrng.anu.edu.au/API/jsonI.php?length=${numberOfRolls}&type=uint8`).then((response) => {
+    const length = numberOfRolls > 1000 ? 1000 : numberOfRolls;
+    return await axios.get(`https://qrng.anu.edu.au/API/jsonI.php?length=${length}&type=uint8`).then((response) => {
         return response.data.data.map(rollD20);
     } ).catch(() => Math.floor(Math.random * 21));
 }
 
 const generateHexJson = async () => {
     const [width, height] = args;
-    const totalNumberOfHex = width * height;
+    const totalNumberOfHex = width * height > 1000 ? 1000 : width * height;
     const terrainTypeRolls = await callQRNG(totalNumberOfHex);
     const hexTypeRolls = await callQRNG(totalNumberOfHex);
-    
-    const hexes = {};
+
     
     const getTerrianType = (index) => {
-        const number = terrainTypeRolls[index];
+        const number = terrainTypeRolls[index - 1];
         switch(number) {
             case 1:
             case 2:
@@ -59,7 +61,7 @@ const generateHexJson = async () => {
     }
     
     const getHexType = (index) => {
-        const number = hexTypeRolls[index];
+        const number = hexTypeRolls[index - 1];
         switch(number) {
             case 1:
             case 2:
@@ -102,16 +104,15 @@ const generateHexJson = async () => {
         let totalHexesRemaining = totalNumberOfHex;
     
     
-        for (let i = 0; i < numberOfXHexes; i++) {
-           for (let j = 0; j < numberOfYHexes; j++) {
-            const currentHexIndex = totalHexesRemaining - 1 ;
+        for (let i = 0; i < numberOfXHexes && i <= 31 && totalHexesRemaining >= 0; i++) {
+           for (let j = 0; j < numberOfYHexes && j <= 31 && totalHexesRemaining >= 0; j++) {
             hexes['hexes'][`X: ${i + 1} Y: ${j + 1}`] = {
-                terrainType: getTerrianType(currentHexIndex),
-                hexType: getHexType(currentHexIndex),
+                terrainType: getTerrianType(totalHexesRemaining),
+                hexType: getHexType(totalHexesRemaining),
                 optionalInfo: null
             };
     
-            totalHexesRemaining--;
+            totalHexesRemaining = totalHexesRemaining - 1;
            } 
         }
     }
