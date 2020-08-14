@@ -22,7 +22,6 @@ const generateHexJson = async () => {
     const terrainTypeRolls = await callQRNG(totalNumberOfHex);
     const hexTypeRolls = await callQRNG(totalNumberOfHex);
 
-    
     const getTerrianType = (index) => {
         const number = terrainTypeRolls[index - 1];
         switch(number) {
