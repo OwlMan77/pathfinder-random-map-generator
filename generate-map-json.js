@@ -122,7 +122,6 @@ const generateHexJson = async () => {
         fs.writeFile('./map-data/rando.json', json, 'utf8', () => console.log('Json Created!'));
     });
     
-    
 }
 
 generateHexJson();
