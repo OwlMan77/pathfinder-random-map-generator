@@ -104,8 +104,8 @@ const generateHexJson = async () => {
         let totalHexesRemaining = totalNumberOfHex;
     
     
-        for (let i = 0; i < numberOfXHexes && i <= 31 && totalHexesRemaining >= 0; i++) {
-           for (let j = 0; j < numberOfYHexes && j <= 31 && totalHexesRemaining >= 0; j++) {
+        for (let i = 0; i < numberOfXHexes && i < 31 && totalHexesRemaining >= 0; i++) {
+           for (let j = 0; j < numberOfYHexes && j < 31 && totalHexesRemaining >= 0; j++) {
             hexes['hexes'][`X: ${i + 1} Y: ${j + 1}`] = {
                 terrainType: getTerrianType(totalHexesRemaining),
                 hexType: getHexType(totalHexesRemaining),
